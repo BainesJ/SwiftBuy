@@ -3,7 +3,7 @@ export type Coordinate = [number, number];
 function calculateDistance(coord1: Coordinate, coord2: Coordinate): number {
     const [x1, y1] = coord1;
     const [x2, y2] = coord2;
-    return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    return Math.abs(x2 - x1) + Math.abs(y2 - y1);
 }
 
 function calculateTotalDistance(route: Coordinate[]): number {
@@ -56,7 +56,7 @@ function twoOpt(route: Coordinate[]): Coordinate[] {
             }
         }
     }
-
+    console.log(calculateTotalDistance(bestRoute))
     return bestRoute;
 }
 
