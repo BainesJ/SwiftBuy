@@ -1,4 +1,3 @@
-import ShoppingBasket from "@/components/ShoppingBasket/ShoppingBasket";
 import {BasketContext} from "@/context/BasketContext/BasketContext";
 import React from "react";
 import NavigationDisplay from "@/components/NavigationDisplay/NavigationDisplay";

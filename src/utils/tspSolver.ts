@@ -49,7 +49,7 @@ function twoOpt(route: Coordinate[]): Coordinate[] {
                 const currentDistance = calculateTotalDistance(bestRoute);
                 const newDistance = calculateTotalDistance(newRoute);
 
-                if (newDistance < currentDistance && newRoute[n-1] == [0,0]) {
+                if (newDistance < currentDistance && newRoute[n-1] == [0,0]) { //Filtering only routes ending back at the starting point.
                     bestRoute = newRoute;
                     improve = true;
                 }

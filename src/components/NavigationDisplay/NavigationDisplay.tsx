@@ -27,10 +27,12 @@ const NavigationDisplay = ({basket}: navigationDisplayProps) => {
         return coordinatesList;
     };
 
+
     const coords = getAllCoordinates()
     console.log("Coords" + coords)
     const path = createOptimalRoute(coords);
     console.log("Path" + path)
+
 
     const handleClick = () => {
         if (path.length - 1 > pathStep) {
@@ -46,12 +48,14 @@ const NavigationDisplay = ({basket}: navigationDisplayProps) => {
         }
     }
 
+
     function findItemsByCoordinate(coordinate: Coordinate, items: ItemType[]): ItemType[] {
         try{
             return items.filter(item => item.coordinate[0] === coordinate[0] && item.coordinate[1] === coordinate[1]);
         } catch {}
         return []
     }
+
 
     function createBasketFromItems(items: ItemType[]): BasketType {
         return {
@@ -63,7 +67,7 @@ const NavigationDisplay = ({basket}: navigationDisplayProps) => {
         };
     }
 
-    console.log("Returning");
+
     return (
         <div className={s.NavigationDisplay}>
             <Instruction instruction={instruction}></Instruction>

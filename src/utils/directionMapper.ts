@@ -8,7 +8,7 @@ enum Direction {
 }
 
 export const getInstructions = (() => {
-    let lastDirection: Direction = Direction.North; // Variable to store the last direction.
+    let lastDirection: Direction = Direction.North;
 
     return function (currentLocation: Coordinate, targetLocation: Coordinate): string {
         const [currentX, currentY] = currentLocation;
@@ -16,18 +16,15 @@ export const getInstructions = (() => {
 
         let instructions: string[] = [];
 
-        // Calculate the horizontal and vertical differences.
         const diffX = targetX - currentX;
         const diffY = targetY - currentY;
 
-        // Determine the direction to move horizontally.
         if (diffX > 0) {
             instructions.push(getMoveInstruction(Direction.East, Math.abs(diffX)));
         } else if (diffX < 0) {
             instructions.push(getMoveInstruction(Direction.West, Math.abs(diffX)));
         }
 
-        // Determine the direction to move vertically.
         if (diffY < 0) {
             instructions.push(getMoveInstruction(Direction.South, Math.abs(diffY)));
         } else if (diffY > 0) {
@@ -38,8 +35,6 @@ export const getInstructions = (() => {
 
         function getMoveInstruction(direction: Direction, distance: number): string {
             let instruction = '';
-            let newDirection;
-            // Determine the instruction based on the direction and distance, considering the last direction.
             if (lastDirection) {
                 switch (direction) {
                     case Direction.North:
@@ -64,7 +59,6 @@ export const getInstructions = (() => {
                         break;
                 }
             } else {
-                // Set the default last direction to north.
                 instruction = `Go forward ${distance} aisles`;
                 lastDirection = Direction.North;
             }
