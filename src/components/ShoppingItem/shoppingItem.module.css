@@ -1,0 +1,23 @@
+/* src/styles.css */
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.itemNamePrice {
+    display: flex;
+    flex-direction: column;
+}
+
+.addToBasketButton {
+    background-color: #4caf50;
+}
+

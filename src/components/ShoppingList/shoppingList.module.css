@@ -1,0 +1,18 @@
+/* src/styles.css */
+
+.shoppingList {
+    margin-bottom: 2rem;
+}
+
+.shoppingList ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shoppingList li {
+    margin-bottom: 0;
+}
+
+.shoppingList li:last-child {
+    margin-bottom: 0;
+}
